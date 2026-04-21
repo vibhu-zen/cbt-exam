@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CUET 2026 – Fundamentals of Partnership</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Noto+Sans:wght@400;500;600&display=swap');
+
+  :root {
+    --bg: #0d1117;
+    --surface: #161b22;
+    --card: #1c2230;
+    --border: #2d3748;
+    --accent: #f6c90e;
+    --accent2: #3b82f6;
+    --danger: #ef4444;
+    --success: #22c55e;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --answered: #1e3a5f;
+    --answered-border: #3b82f6;
+    --marked: #3b2a0a;
+    --marked-border: #f6c90e;
+    --current: #1a3a1a;
+    --current-border: #22c55e;
+    --not-visited: #1c2230;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ===== HEADER ===== */
+  .header {
+    background: var(--surface);
+    border-bottom: 2px solid var(--accent);
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .header-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 1px;
+  }
+  .header-sub { font-size: 0.75rem; color: var(--muted); }
+
+  .timer-box {
+    background: var(--card);
+    border: 2px solid var(--accent);
+    border-radius: 8px;
+    padding: 6px 18px;
+    text-align: center;
+    min-width: 120px;
+  }
+  .timer-label { font-size: 0.65rem; color: var(--muted); letter-spacing: 2px; text-transform: uppercase; }
+  .timer-value {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 2px;
+  }
+  .timer-value.danger { color: var(--danger); animation: pulse 1s infinite; }
+
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.5} }
+
+  /* ===== LAYOUT ===== */
+  .main-layout {
+    display: flex;
+    gap: 0;
+    height: calc(100vh - 60px);
+  }
+
+  /* ===== QUESTION PANEL ===== */
+  .question-panel {
+    flex: 1;
+    padding: 24px 30px;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+  }
+
+  .question-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+  .q-badge {
+    background: var(--accent);
+    color: #000;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 4px 12px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+  }
+  .q-section { font-size: 0.75rem; color: var(--muted); }
+
+  .question-text {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text);
+    margin-bottom: 6px;
+    background: var(--card);
+    border-left: 4px solid var(--accent);
+    padding: 14px 18px;
+    border-radius: 0 8px 8px 0;
+  }
+
+  .passage-box {
+    background: #111827;
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent2);
+    padding: 14px 18px;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: #cbd5e1;
+  }
+  .passage-box strong { color: var(--accent2); }
+
+  .options-list { list-style: none; margin-top: 16px; display: flex; flex-direction: column; gap: 10px; }
+
+  .option-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: var(--card);
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 16px;
+    cursor: pointer;
+    transition: all 0.18s ease;
+    user-select: none;
+  }
+  .option-item:hover { border-color: var(--accent2); background: #1a2332; }
+  .option-item.selected { border-color: var(--accent2); background: var(--answered); }
+  .option-item.correct { border-color: var(--success) !important; background: #0f2d1a !important; }
+  .option-item.wrong { border-color: var(--danger) !important; background: #2d0f0f !important; }
+
+  .opt-key {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--accent);
+    min-width: 20px;
+    padding-top: 1px;
+  }
+  .option-item.selected .opt-key { color: #fff; }
+  .opt-text { font-size: 0.93rem; line-height: 1.5; }
+
+  /* ===== ACTION BUTTONS ===== */
+  .action-bar {
+    display: flex;
+    gap: 10px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+  }
+  .btn {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    padding: 9px 22px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .btn-primary { background: var(--accent2); color: #fff; }
+  .btn-primary:hover { background: #2563eb; }
+  .btn-mark { background: var(--marked); border: 1.5px solid var(--marked-border); color: var(--accent); }
+  .btn-mark:hover { background: #4a3810; }
+  .btn-mark.active { background: var(--accent); color: #000; }
+  .btn-clear { background: var(--card); border: 1.5px solid var(--border); color: var(--muted); }
+  .btn-clear:hover { border-color: var(--danger); color: var(--danger); }
+  .btn-submit { background: var(--success); color: #000; margin-left: auto; }
+  .btn-submit:hover { background: #16a34a; }
+
+  .nav-btns { display: flex; gap: 8px; margin-left: auto; }
+  .btn-nav { background: var(--card); border: 1.5px solid var(--border); color: var(--text); padding: 9px 16px; }
+  .btn-nav:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* ===== SIDEBAR ===== */
+  .sidebar {
+    width: 280px;
+    background: var(--surface);
+    border-left: 1px solid var(--border);
+    padding: 16px;
+    overflow-y: auto;
+    flex-shrink: 0;
+  }
+
+  .sidebar-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--muted);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .legend { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 16px; }
+  .legend-item { display: flex; align-items: center; gap: 6px; font-size: 0.72rem; color: var(--muted); }
+  .leg-dot { width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; }
+
+  .q-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; }
+  .q-btn {
+    aspect-ratio: 1;
+    border-radius: 5px;
+    border: 1.5px solid var(--border);
+    background: var(--not-visited);
+    color: var(--muted);
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .q-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .q-btn.answered { background: var(--answered); border-color: var(--answered-border); color: #93c5fd; }
+  .q-btn.marked { background: var(--marked); border-color: var(--marked-border); color: var(--accent); }
+  .q-btn.answered.marked { background: #1a2a40; border-color: #a855f7; color: #c084fc; }
+  .q-btn.current { background: var(--current); border-color: var(--current-border); color: #86efac; }
+
+  .stats-bar {
+    margin-top: 16px;
+    background: var(--card);
+    border-radius: 8px;
+    padding: 12px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .stat-item { text-align: center; }
+  .stat-val { font-family: 'Rajdhani', sans-serif; font-size: 1.3rem; font-weight: 700; }
+  .stat-lbl { font-size: 0.68rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
+  .s-answered .stat-val { color: var(--accent2); }
+  .s-marked .stat-val { color: var(--accent); }
+  .s-not .stat-val { color: var(--muted); }
+  .s-total .stat-val { color: var(--text); }
+
+  /* ===== RESULT OVERLAY ===== */
+  #result-screen {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.9);
+    z-index: 1000;
+    overflow-y: auto;
+    padding: 30px 20px;
+  }
+  .result-card {
+    max-width: 700px;
+    margin: 0 auto;
+    background: var(--surface);
+    border: 2px solid var(--accent);
+    border-radius: 16px;
+    padding: 36px;
+  }
+  .result-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-align: center;
+    margin-bottom: 4px;
+    letter-spacing: 2px;
+  }
+  .result-sub { text-align: center; color: var(--muted); font-size: 0.85rem; margin-bottom: 28px; }
+  .score-circle {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 6px solid var(--accent);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 28px;
+  }
+  .score-num { font-family: 'Rajdhani', sans-serif; font-size: 2.5rem; font-weight: 700; color: var(--accent); line-height: 1; }
+  .score-denom { font-size: 0.85rem; color: var(--muted); }
+
+  .result-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 28px; }
+  .rg-item { background: var(--card); border-radius: 8px; padding: 14px; text-align: center; }
+  .rg-val { font-family: 'Rajdhani', sans-serif; font-size: 1.6rem; font-weight: 700; }
+  .rg-lbl { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 2px; }
+  .rg-correct .rg-val { color: var(--success); }
+  .rg-wrong .rg-val { color: var(--danger); }
+  .rg-skip .rg-val { color: var(--muted); }
+
+  .result-review { margin-top: 20px; }
+  .review-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 8px;
+  }
+  .review-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.85rem;
+  }
+  .rv-num { font-family: 'Rajdhani', sans-serif; font-weight: 700; color: var(--muted); min-width: 30px; }
+  .rv-q { flex: 1; color: var(--text); }
+  .rv-ans { font-weight: 600; min-width: 60px; text-align: right; }
+  .rv-ans.correct { color: var(--success); }
+  .rv-ans.wrong { color: var(--danger); }
+  .rv-ans.skip { color: var(--muted); }
+
+  .btn-restart {
+    display: block;
+    margin: 24px auto 0;
+    background: var(--accent);
+    color: #000;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 12px 36px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 1px;
+  }
+
+  /* ===== CONFIRM MODAL ===== */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.75);
+    z-index: 500;
+    align-items: center;
+    justify-content: center;
+  }
+  .modal-overlay.active { display: flex; }
+  .modal-box {
+    background: var(--surface);
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    padding: 28px 32px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+  }
+  .modal-icon { font-size: 2.5rem; margin-bottom: 12px; }
+  .modal-title { font-family: 'Rajdhani', sans-serif; font-size: 1.3rem; font-weight: 700; margin-bottom: 8px; }
+  .modal-msg { font-size: 0.85rem; color: var(--muted); margin-bottom: 20px; line-height: 1.6; }
+  .modal-btns { display: flex; gap: 10px; justify-content: center; }
+
+  ::-webkit-scrollbar { width: 5px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 10px; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div>
+    <div class="header-title">⚡ CUET 2026 — Fundamentals of Partnership</div>
+    <div class="header-sub">Section: Accountancy &nbsp;|&nbsp; Total Questions: 50 &nbsp;|&nbsp; Maximum Marks: 200</div>
+  </div>
+  <div class="timer-box">
+    <div class="timer-label">Time Left</div>
+    <div class="timer-value" id="timer">60:00</div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main-layout">
+  <!-- QUESTION PANEL -->
+  <div class="question-panel" id="question-panel">
+    <div id="passage-area"></div>
+    <div class="question-header">
+      <span class="q-badge" id="q-label">Q.1</span>
+      <span class="q-section">Fundamentals of Partnership</span>
+    </div>
+    <div class="question-text" id="q-text"></div>
+    <ul class="options-list" id="options-list"></ul>
+    <div class="action-bar">
+      <button class="btn btn-mark" id="btn-mark" onclick="toggleMark()">🔖 Mark for Review</button>
+      <button class="btn btn-clear" onclick="clearAnswer()">✕ Clear</button>
+      <div class="nav-btns">
+        <button class="btn btn-nav" onclick="navigate(-1)">← Prev</button>
+        <button class="btn btn-primary" onclick="saveAndNext()">Save & Next →</button>
+      </div>
+      <button class="btn btn-submit" onclick="openConfirm()">Submit Test</button>
+    </div>
+  </div>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="sidebar-title">Question Palette</div>
+    <div class="legend">
+      <div class="legend-item"><div class="leg-dot" style="background:#1e3a5f;border:1.5px solid #3b82f6"></div>Answered</div>
+      <div class="legend-item"><div class="leg-dot" style="background:#3b2a0a;border:1.5px solid #f6c90e"></div>Marked</div>
+      <div class="legend-item"><div class="leg-dot" style="background:#1c2230;border:1.5px solid #2d3748"></div>Not Visited</div>
+      <div class="legend-item"><div class="leg-dot" style="background:#1a3a1a;border:1.5px solid #22c55e"></div>Current</div>
+    </div>
+    <div class="q-grid" id="q-grid"></div>
+    <div class="stats-bar">
+      <div class="stat-item s-answered"><div class="stat-val" id="stat-ans">0</div><div class="stat-lbl">Answered</div></div>
+      <div class="stat-item s-not"><div class="stat-val" id="stat-not">50</div><div class="stat-lbl">Not Answered</div></div>
+      <div class="stat-item s-marked"><div class="stat-val" id="stat-mark">0</div><div class="stat-lbl">Marked</div></div>
+      <div class="stat-item s-total"><div class="stat-val">50</div><div class="stat-lbl">Total</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- CONFIRM MODAL -->
+<div class="modal-overlay" id="confirm-modal">
+  <div class="modal-box">
+    <div class="modal-icon">📋</div>
+    <div class="modal-title">Submit Test?</div>
+    <div class="modal-msg" id="confirm-msg">Are you sure you want to submit the test? This action cannot be undone.</div>
+    <div class="modal-btns">
+      <button class="btn btn-clear" style="padding:9px 24px;" onclick="closeConfirm()">Cancel</button>
+      <button class="btn btn-submit" style="margin:0;" onclick="submitTest()">Submit</button>
+    </div>
+  </div>
+</div>
+
+<!-- RESULT SCREEN -->
+<div id="result-screen">
+  <div class="result-card">
+    <div class="result-title">TEST COMPLETED</div>
+    <div class="result-sub">Fundamentals of Partnership — CUET 2026</div>
+    <div class="score-circle">
+      <div class="score-num" id="res-score">0</div>
+      <div class="score-denom">out of 50</div>
+    </div>
+    <div class="result-grid">
+      <div class="rg-item rg-correct"><div class="rg-val" id="res-correct">0</div><div class="rg-lbl">Correct</div></div>
+      <div class="rg-item rg-wrong"><div class="rg-val" id="res-wrong">0</div><div class="rg-lbl">Wrong</div></div>
+      <div class="rg-item rg-skip"><div class="rg-val" id="res-skip">0</div><div class="rg-lbl">Skipped</div></div>
+    </div>
+    <div class="result-review">
+      <div class="review-title">Answer Review</div>
+      <div id="review-list"></div>
+    </div>
+    <button class="btn-restart" onclick="restartTest()">↺ Restart Test</button>
+  </div>
+</div>
+
+<script>
+const QUESTIONS = [
+  {
+    q: "In which of the following case, claim is valid if the partnership agreement is silent?",
+    opts: [
+      "Sanjay is an active partner and wants a salary of 1,00,000 per year",
+      "Monika had advanced a loan to the firm and claims interest @10% p.a.",
+      "Sanjay and Monika contributed 2,00,000 and 5,00,000 as capital respectively and Monika wants equal share",
+      "Monika wants interest on capital to be contributed @10% per annum"
+    ],
+    ans: 2 // c
+  },
+  {
+    q: "Complete the sequence where interest on capital has to be provided as per partnership deed, but available profits are not sufficient to provide full amount of interest on capital.\nA. If it is appropriation calculate interest on capital for all partners at given rate\nB. Divide the available amount in the capital ratio among the partners\nC. Calculate ratio between capital of partners\nD. Consider the partnership deed and decide whether interest on capital is a charge or an appropriation\nE. Consider the available profit\nChoose the correct answer:",
+    opts: ["A, B, C, D, E", "B, C, D, E, A", "D, A, E, C, B", "C, D, A, B, E"],
+    ans: 2 // c
+  },
+  {
+    q: "The steps in the process of Preparing Profit and Loss Appropriation account are:\na) Transfer the net profit to the credit side of P & L Appropriation A/c\nb) Divide the profit among partners in the profit-sharing ratio\nc) Ascertain net profit after providing for all charges\nd) Debit the P & L appropriation A/c with all appropriations like partners salary etc\ne) Credit the P & L appropriation A/c with interest on drawing and deficiency on account of partners guarantee\nChoose the correct answer:",
+    opts: ["A, B, C, D, E", "C, A, D, E, B", "B, C, E, A, D", "B, C, D, A, E"],
+    ans: 1 // b
+  },
+  {
+    q: "Partnership deed should be drafted and prepared as per:",
+    opts: ["Provision of partnership act", "Companies act", "Registrar of firms", "Provision of the stamps act"],
+    ans: 3 // d
+  },
+  {
+    q: "Raman a partner withdrew ₹10,000 at the beginning of every month for the first 8 months then ₹15,000 at end of every month for the last 4 months. Calculate interest on drawings to be charged at 6% p.a. for the year ending March 31, 2023.",
+    opts: ["₹3,700", "₹537.50", "₹8,400", "₹3,850"],
+    ans: 3 // d
+  },
+  {
+    q: "In the absence of a partnership deed which of the following are correct?\nA. Profit sharing ratio will be on the basis of capital contributed by the partners\nB. No interest on capital will be provided\nC. No interest on drawing will be charged\nD. 6% p.a. interest on partners loan will be provided\nE. Partner will get salary for extra time devoted for the firm\nChoose the correct answer:",
+    opts: ["A, B and C only", "A, D, and E only", "D, and E only", "B, C and D only"],
+    ans: 3 // d
+  },
+  {
+    q: "Arrange the following in sequence of the final accounts for a partnership firm.\nA. Profit and loss account\nB. Partners capital account\nC. Trading account\nD. Balance sheet\nE. Profit and loss appropriation account\nChoose the correct answer:",
+    opts: ["C, A, E, B, D", "C, E, A, B, D", "E, C, A, B, D", "E, A, C, B, D"],
+    ans: 0 // a
+  },
+  {
+    q: "Match List I with List II — When the partners capital is fixed:\nA. Additional capital introduced → ?\nB. Withdrawal of capital → ?\nC. Drawings → ?\nD. Salary payable to partner → ?\n\nI. Credit side of current account\nII. Debit side of current account\nIII. Debit side of partner capital account\nIV. Credit side of partner capital account\nChoose the correct answer:",
+    opts: ["A-IV, B-III, C-II, D-I", "A-I, B-II, C-III, D-IV", "A-II, B-I, C-III, D-IV", "A-II, B-III, C-IV, D-I"],
+    ans: 0 // a
+  },
+  {
+    q: "Mr. Kunal withdrew ₹10,000 per month at the end of each month from a firm for his personal use during the year ending 31-3-2022. What will be the interest on drawings if charged @ 8% p.a.?",
+    opts: ["₹6,000", "₹5,200", "₹4,800", "₹4,400"],
+    ans: 3 // d
+  },
+  {
+    q: "Nawab, Shanaya and Hritik are partners sharing profits and losses in the ratio of 5:3:2. The partnership deed provide for charging interest on drawings @ 10% p.a. The drawings of Nawab, Shanaya and Hritik were ₹20,000; ₹15,000 and ₹10,000 respectively. After final accounts have been prepared it was discovered that interest on drawings has not been charged. The adjusting entry will be:",
+    opts: [
+      "Shanaya Capital A/c Dr. 75; Hritik Capital A/c Dr. 50; To Nawab Capital A/c 125",
+      "Shanaya Capital A/c Dr. 125; To Hritik Capital A/c 50; To Nawab Capital A/c 75",
+      "Nawab Capital A/c Dr. 125; To Shanaya Capital A/c 75; To Hritik Capital A/c 50",
+      "Shanaya Capital A/c Dr. 150; Hritik Capital A/c Dr. 100; To Nawab Capital A/c 250"
+    ],
+    ans: 0 // a
+  },
+  {
+    q: "Calculate interest on drawings if an amount of ₹7,500 is withdrawn at the end of bimonthly (every 2 months) for the year. Rate of interest on drawing is 8% p.a.",
+    opts: ["₹1,500", "₹2,500", "₹3,000", "₹2,256"],
+    ans: 0 // a
+  },
+  {
+    q: "Ram and Rahul are partners sharing profits and losses in the ratio of 3:2. Their capital A/c showed the balance of ₹4,00,000 and ₹3,00,000 respectively on 1st April, 2021. Ram introduced additional capital on 1st August, 2021. Interest on capital is allowed @6% p.a. Total interest on capital of both the partners is ₹50,000. Calculate additional capital introduced by Ram on 1st August, 2021 and interest on capital earned on additional capital.",
+    opts: ["₹1,00,000 and ₹4,000", "₹3,00,000 and ₹18,000", "₹2,00,000 and ₹8,000", "₹1,50,000 and ₹10,000"],
+    ans: 2 // c
+  },
+  {
+    q: "Mickey, Tom and Jerry were partners in the ratio of 5:3:2. On 31st March, 2021, their books reflected a net profit of ₹2,10,000. As per the term of the partnership deed they were entitled for interest on capital which amounted to ₹80,000; ₹60,000 and ₹40,000 respectively. Besides this a salary of ₹60,000 each was payable to Mickey and Tom. Calculate the amount of total interest on capital given to all partners.",
+    opts: ["₹1,26,000", "₹1,80,000", "₹84,000", "₹56,000"],
+    ans: 0 // a
+  },
+  {
+    q: "Identify the correct sequence to be followed while preparing of final account of a partnership firm:\n(A) Profit and Loss Appropriation Account\n(B) Profit and Loss Account\n(C) Trading Account\n(D) Balance Sheet\nChoose the correct answer:",
+    opts: ["(C), (B), (A), (D)", "(A), (C), (B), (D)", "(B), (A), (D), (C)", "(C), (B), (D), (A)"],
+    ans: 0 // a
+  },
+  {
+    q: "Match List I with List II:\n(A) Salary to partner → ?\n(B) Interest on Partner's loan → ?\n(C) Interest on Partner's Drawings → ?\n(D) Additional capital introduced → ?\n\n(I) Credit side of Partner's Capital Account\n(II) Debit side of Partner's Current Account\n(III) Debit side of Profit and Loss Account\n(IV) Credit side of Partner's Current Account\nChoose the correct answer:",
+    opts: [
+      "(A)-(I), (B)-(II), (C)-(III), (D)-(IV)",
+      "(A)-(I), (B)-(III), (C)-(II), (D)-(IV)",
+      "(A)-(IV), (B)-(III), (C)-(II), (D)-(I)",
+      "(A)-(III), (B)-(IV), (C)-(I), (D)-(II)"
+    ],
+    ans: 2 // c
+  },
+  {
+    q: "A partnership can have maximum 50 partners. This limit has been set by the:",
+    opts: ["Indian Partnership Act, 1932", "State Government", "Indian Contract Act, 1872", "Central Government"],
+    ans: 3 // d
+  },
+  {
+    q: "Match List I with List II — Equal amount of drawings made:\n(A) At the end of each half year → ?\n(B) At the beginning of each quarter → ?\n(C) At the beginning of each month → ?\n(D) At the end of each quarter → ?\n\n(I) 4.5 months  (II) 6.5 months  (III) 7.5 months  (IV) 3 months\nChoose the correct answer:",
+    opts: [
+      "(A)-(I), (B)-(II), (C)-(III), (D)-(IV)",
+      "(A)-(I), (B)-(III), (C)-(II), (D)-(IV)",
+      "(A)-(IV), (B)-(II), (C)-(I), (D)-(III)",
+      "(A)-(IV), (B)-(III), (C)-(II), (D)-(I)"
+    ],
+    ans: 3 // d
+  },
+  {
+    q: "Kavita and Lalita are partners, sharing profits in the ratio of 2:1. They decide to admit Mohan for 1/4th share in future with a guaranteed amount of ₹25,000. Both Kavita and Lalita undertake to meet the liability arising due to the guaranteed amount to Mohan in their respective profit-sharing ratio. The firm earned profits of ₹76,000 for the year 2022-23. The deficiency borne by Kavita is:",
+    opts: ["₹4,000", "₹2,000", "₹6,000", "₹4,500"],
+    ans: 0 // a
+  },
+  {
+    q: "Rent payable to partner is:",
+    opts: [
+      "Debited to trading account",
+      "Credited to profit and loss account",
+      "Debited to profit and loss account",
+      "Debited to profit and loss appropriation account"
+    ],
+    ans: 2 // c
+  },
+  {
+    q: "When the date of drawing is not specified, interest on drawings are calculated for:",
+    opts: ["One full year", "6.5 month", "5.5 month", "6 month"],
+    ans: 3 // d
+  },
+  {
+    q: "Identify the correct statement from the given below:",
+    opts: [
+      "Partner's Current Account will never be shown in Assets side of the Balance Sheet",
+      "Partner's Current Account will either be shown in Assets side of the Balance Sheet or be shown in liabilities side of the Balance Sheet",
+      "Partner's Current Account will always be shown in liabilities side of the Balance Sheet",
+      "Partner's Current Account will always in Assets side of the Balance Sheet"
+    ],
+    ans: 1 // b
+  },
+  {
+    q: "In case of Fixed Capital Account, interest on Drawings are:",
+    opts: [
+      "Debited to capital account",
+      "Credited to capital account",
+      "Debited to current account",
+      "Credited to current account"
+    ],
+    ans: 2 // c
+  },
+  {
+    q: "In the absence of partnership deed, interest on drawings is charged at:",
+    opts: ["6% p.a.", "Nil", "At the prevailing market rate", "6% p.a."],
+    ans: 1 // b
+  },
+  {
+    q: "In the case of guarantee of profit the sequence of steps to be followed are:\nA. divide the profit in the given ratio\nB. prepare profit and loss appropriation account as usual\nC. deduct the deficiency from guaranteeing partner and add the same to guaranteed partner\nD. find the deficiency\nChoose the correct answer:",
+    opts: ["A, B, C, D", "A, B, D, C", "B, A, D, C", "C, B, D, A"],
+    ans: 2 // c
+  },
+  {
+    q: "The liability of partners is:",
+    opts: [
+      "Limited to the value of shares held",
+      "Limited to amount of investment",
+      "Limited to the amount of guarantee",
+      "Unlimited"
+    ],
+    ans: 3 // d
+  },
+  {
+    q: "When the capital accounts are fixed, additional capital introduced by the partner is:",
+    opts: [
+      "Credited to current account",
+      "Debited to current account",
+      "Credited to capital account",
+      "Debited to capital account"
+    ],
+    ans: 2 // c
+  },
+  {
+    q: "Which of the following is the feature of fixed capital method in partnership accounts?",
+    opts: [
+      "Each partner has one account",
+      "The capital accounts always show a credit balance",
+      "The balance of the capital account fluctuates from year to year",
+      "In the absence of any instruction the capital account should be prepared by this method"
+    ],
+    ans: 1 // b
+  },
+  {
+    q: "Neha contributed ₹30,000 and Saloni ₹90,000 as capital. What will be Saloni's share in profit if the partnership agreement is silent?",
+    opts: [
+      "One third of total profit",
+      "One fourth of total profit",
+      "Half of total profit",
+      "Two third of total profit"
+    ],
+    ans: 2 // c
+  },
+  {
+    q: "Which of the following account/statement is prepared to distribute the profit or loss among partners?",
+    opts: [
+      "Profit and Loss Appropriation A/c",
+      "Profit and Loss Adjustment A/c",
+      "Profit and Loss A/c",
+      "Balance Sheet"
+    ],
+    ans: 0 // a
+  },
+  {
+    q: "Which of the following is not the feature of partnership?",
+    opts: [
+      "There should be at least two persons coming together for a common goal.",
+      "Partnership is the result of an agreement between two or more persons to do business and share its profits only",
+      "The business of a partnership concern may be carried on by all the partners or any of them acting for all",
+      "The business profits and losses are shared by all the partners as per profit sharing ratio"
+    ],
+    ans: 1 // b
+  },
+  {
+    q: "Vijay and Manohar share profits and losses in the ratio of 2:1. They admit Prakash as a partner with ¼ share in profits with a guarantee that his share of profit will be at least ₹50,000. The net profit of the firm for the year ending March 31, 2015 was ₹1,60,000. Calculate the amount of profit Vijay will get:",
+    opts: ["₹60,333", "₹73,333", "₹50,300", "₹80,333"],
+    ans: 1 // b
+  },
+  {
+    q: "Match List I with List II:\n(A) Bank (fresh capital introduced) → ?\n(B) Interest on drawings → ?\n(C) Bank (permanent withdrawal of capital) → ?\n(D) Commission → ?\n\n(I) Debit side of Partner's current account\n(II) Debit side of Partner's capital account\n(III) Credit side of Partner's current account\n(IV) Credit side of partner's capital account\nChoose the correct answer:",
+    opts: [
+      "(A)–(IV), (B)–(I), (C)–(II), (D)–(III)",
+      "(A)–(I), (B)–(II), (C)–(III), (D)–(IV)",
+      "(A)–(I), (B)–(II), (C)–(IV), (D)–(III)",
+      "(A)–(III), (B)–(IV), (C)–(I), (D)–(II)"
+    ],
+    ans: 0 // a
+  },
+  {
+    q: "The clauses of a partnership deed can be altered with the consent of:",
+    opts: ["Government Authority", "Registrar of Firms", "All the Partners", "State Government"],
+    ans: 2 // c
+  },
+  {
+    q: "The Profit and Loss Appropriation Account is merely an extension of the Profit and Loss Account of the firm. Which among the following is NOT shown in the Profit and Loss Appropriation Account?",
+    opts: [
+      "All adjustments in respect of partners salary",
+      "All adjustments in respect of payment to vendor",
+      "All adjustments in respect of interest on capital",
+      "All adjustments in respect of interest on drawings"
+    ],
+    ans: 1 // b
+  },
+  {
+    q: "Calculate interest on drawing if Ram withdrew ₹3,000 per month at the beginning of each month for the whole year if interest on drawing is charged @9% per annum:",
+    opts: ["₹1,455", "₹1,745", "₹1,485", "₹1,755"],
+    ans: 3 // d
+  },
+  {
+    q: "Which among the following is NOT true?",
+    opts: [
+      "Valid partnership can be formulated even without a written agreement between the partners",
+      "Each partner carrying on the business is the principal as well as the agent for all the other partners",
+      "The agreement may carry or not on any business. Mere co-ownership of a property can amount to partnership",
+      "Persons who have entered into partnership with one another are individually called partner and collectively called firm"
+    ],
+    ans: 2 // c
+  },
+  {
+    q: "Yadu, Madhu and Vidu are partners sharing profit and losses in the ratio of 2:2:1. Their fixed capital on April 01, 2018 were: Yadu ₹5,00,000; Madhu ₹4,00,000; Vidu ₹3,50,000. As per a partnership deed, partners are entitled to interest on capital @5% p.a. and Yadu has to be paid a salary of ₹2,000 per month. The net loss of the firm for year ending March 31, 2019 amounted to ₹75,000. Partners' distribution of loss would be:",
+    opts: [
+      "Yadu ₹30,000; Madhu ₹30,000; Vidu ₹15,000",
+      "Yadu ₹25,000; Madhu ₹25,000; Vidu ₹25,000",
+      "Yadu ₹39,600; Madhu ₹39,600; Vidu ₹19,800",
+      "Yadu ₹35,000; Madhu ₹25,000; Vidu ₹15,000"
+    ],
+    ans: 0 // a
+  },
+  {
+    q: "Amitabh and Babul are partners sharing profits in the ratio of 3:2, with capital of ₹50,000 and ₹30,000 respectively. Amitabh has also given a Loan on April 01, 2024 of ₹50,000 to the firm without any agreement. Calculate Interest on Amitabh's Loan assuming books are closing on 31st March, 2025.",
+    opts: ["Nil", "₹6,000", "₹1,500", "₹3,000"],
+    ans: 3 // d
+  },
+  {
+    q: "Which combination of statements is true about the fixed and fluctuating capital?\nA. Under the Fixed capital method two separate accounts are maintained for each partner\nB. Under the Fluctuating capital method the balance of the capital account fluctuates from year to year\nC. Under the Fixed capital method, drawings, salary, interest on capital, etc. are posted in the current accounts\nD. Under the Fixed capital method, the capital accounts always show a debit balance\nChoose the correct answer:",
+    opts: ["A, B and D only", "A, B and C only", "A, C and D only", "B, C and D only"],
+    ans: 1 // b
+  },
+  {
+    q: "Ram and Laxman started business on 1st Jan 2020 with a capital of ₹1,20,000 and ₹80,000 respectively. Ram introduced ₹50,000 to the firm on 1st July 2020 as additional capital. If the rate of interest is 15% p.a. and accounts are closed as per calendar year, the interest payable to Ram on Capital would be:",
+    opts: ["₹12,700", "₹18,000", "₹25,500", "₹21,750"],
+    ans: 3 // d
+  },
+  {
+    q: "Which of the following statement is incorrect?",
+    opts: [
+      "Valid partnership can be formulated even without a written agreement between the partners",
+      "Each partner will share profit in same proportion as other in case partnership deed is not there",
+      "Maximum number of partners as prescribed by central government can be 50",
+      "The method of settlement of dispute among the partner cannot be part of the partnership deed."
+    ],
+    ans: 3 // d
+  },
+  {
+    q: "Match List I with List II — Interest on Drawings:\n(A) When amount is withdrawn at the beginning of each month → ?\n(B) When the amount is withdrawn at the end of each month → ?\n(C) When the amount is withdrawn at the middle of each month → ?\n(D) When the amount is withdrawn at the end of each quarter → ?\n\n(I) 6 months  (II) 6.5 months  (III) 5.5 months  (IV) 4.5 months\nChoose the correct answer:",
+    opts: [
+      "(A)–(III), (B)–(II), (C)–(IV), (D)–(I)",
+      "(A)–(II), (B)–(III), (C)–(IV), (D)–(I)",
+      "(A)–(II), (B)–(III), (C)–(I), (D)–(IV)",
+      "(A)–(III), (B)–(IV), (C)–(I), (D)–(II)"
+    ],
+    ans: 2 // c
+  },
+  {
+    q: "Choose the correct statement if a partnership deed is not present:",
+    opts: [
+      "Interest on capital are allowed",
+      "Interest on partner drawing is charged",
+      "Remuneration or salary is given to partners",
+      "Partners shall share the profit and losses equally"
+    ],
+    ans: 3 // d
+  },
+  {
+    q: "Sameer and Yasmin are partners with capitals of ₹15,00,000 and ₹10,00,000 respectively. They agreed to share profits in the ratio of 3:2. They admit Ravi on October 1, 2019 who brings ₹12,00,000 as capital and Sameer also introduced additional capital ₹3,00,000 on that date. Interest on partner's capital is provided @5% p.a. The amount of interest on the capital of Sameer for the year 2019-20 is:",
+    opts: ["₹82,500", "₹90,000", "₹82,000", "₹75,000"],
+    ans: 0 // a
+  },
+  {
+    q: "Which section of the Partnership Act 1932, defines partnership?",
+    opts: ["Section 4", "Section 5", "Section 6", "Section 7"],
+    ans: 0 // a
+  },
+  {
+    q: "For distribution of profits made during a year among the partners the following account is debited:",
+    opts: [
+      "Profit and Loss Appropriation A/c",
+      "Partner's Capital A/c",
+      "Goodwill A/c",
+      "Profit and Loss A/c"
+    ],
+    ans: 0 // a
+  },
+  {
+    q: "A and B are partners in a firm with their fixed capital ₹4,00,000 and ₹5,00,000 respectively. After preparation of accounts it was found that interest on capital @10% p.a. as provided by the partnership deed is omitted. In order to rectify the mistake. A's current account will be ___?",
+    opts: ["Credited by ₹5,000", "Debited by ₹5,000", "Credited by ₹10,000", "Debited by ₹10,000"],
+    ans: 1 // b
+  },
+  {
+    q: "Ravi one the partners provided ₹1,00,000 loan to the firm. In the absence of partnership deed interest on partners loan is allowed @ _____?",
+    opts: ["6%", "6% p.a.", "5%", "5% p.a."],
+    ans: 1 // b
+  },
+  {
+    q: "The business of a partnership concern may be carried on by all the partners or any one of them acting for all. Indicate which feature of the partnership?",
+    opts: ["Agreement", "Mutual agency", "Business", "Liability of partners"],
+    ans: 1 // b
+  },
+  {
+    q: "In the case of fixed capital method, following two accounts are maintained:",
+    opts: [
+      "Capital account and Balance Sheet",
+      "Current account and Balance Sheet",
+      "Capital account and Current account",
+      "Revaluation and Capital account"
+    ],
+    ans: 2 // c
+  }
+];
+
+const OPTION_LABELS = ['a', 'b', 'c', 'd'];
+let current = 0;
+let userAnswers = new Array(50).fill(-1);
+let marked = new Array(50).fill(false);
+let visited = new Array(50).fill(false);
+let timerInterval;
+let timeLeft = 60 * 60;
+let submitted = false;
+
+// Build Q Grid
+function buildGrid() {
+  const grid = document.getElementById('q-grid');
+  grid.innerHTML = '';
+  for (let i = 0; i < 50; i++) {
+    const btn = document.createElement('button');
+    btn.className = 'q-btn';
+    btn.textContent = i + 1;
+    btn.id = `qb-${i}`;
+    btn.onclick = () => goTo(i);
+    grid.appendChild(btn);
+  }
+}
+
+function updateGridBtn(i) {
+  const btn = document.getElementById(`qb-${i}`);
+  btn.className = 'q-btn';
+  if (i === current) btn.classList.add('current');
+  else if (marked[i] && userAnswers[i] !== -1) btn.classList.add('answered', 'marked');
+  else if (marked[i]) btn.classList.add('marked');
+  else if (userAnswers[i] !== -1) btn.classList.add('answered');
+}
+
+function updateAllGridBtns() {
+  for (let i = 0; i < 50; i++) updateGridBtn(i);
+}
+
+function updateStats() {
+  const answered = userAnswers.filter(a => a !== -1).length;
+  const markedCount = marked.filter(m => m).length;
+  document.getElementById('stat-ans').textContent = answered;
+  document.getElementById('stat-not').textContent = 50 - answered;
+  document.getElementById('stat-mark').textContent = markedCount;
+}
+
+function renderQuestion(i) {
+  visited[i] = true;
+  const q = QUESTIONS[i];
+  document.getElementById('q-label').textContent = `Q.${i + 1}`;
+  document.getElementById('q-text').innerHTML = q.q.replace(/\n/g, '<br>');
+
+  const optsList = document.getElementById('options-list');
+  optsList.innerHTML = '';
+  q.opts.forEach((opt, idx) => {
+    const li = document.createElement('li');
+    li.className = 'option-item' + (userAnswers[i] === idx ? ' selected' : '');
+    li.innerHTML = `<span class="opt-key">${OPTION_LABELS[idx]})</span><span class="opt-text">${opt}</span>`;
+    li.onclick = () => selectOption(idx);
+    optsList.appendChild(li);
+  });
+
+  // Mark button
+  const markBtn = document.getElementById('btn-mark');
+  markBtn.classList.toggle('active', marked[i]);
+  markBtn.textContent = marked[i] ? '🔖 Marked' : '🔖 Mark for Review';
+
+  updateAllGridBtns();
+  updateStats();
+  document.getElementById('question-panel').scrollTop = 0;
+}
+
+function selectOption(idx) {
+  if (submitted) return;
+  userAnswers[current] = idx;
+  renderQuestion(current);
+}
+
+function saveAndNext() {
+  if (current < 49) { current++; renderQuestion(current); }
+}
+
+function navigate(dir) {
+  const next = current + dir;
+  if (next >= 0 && next < 50) { current = next; renderQuestion(current); }
+}
+
+function goTo(i) {
+  current = i;
+  renderQuestion(i);
+}
+
+function toggleMark() {
+  marked[current] = !marked[current];
+  renderQuestion(current);
+}
+
+function clearAnswer() {
+  userAnswers[current] = -1;
+  renderQuestion(current);
+}
+
+// TIMER
+function startTimer() {
+  timerInterval = setInterval(() => {
+    timeLeft--;
+    const m = Math.floor(timeLeft / 60);
+    const s = timeLeft % 60;
+    const el = document.getElementById('timer');
+    el.textContent = `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+    if (timeLeft <= 300) el.classList.add('danger');
+    if (timeLeft <= 0) { clearInterval(timerInterval); submitTest(); }
+  }, 1000);
+}
+
+function openConfirm() {
+  const answered = userAnswers.filter(a => a !== -1).length;
+  const unanswered = 50 - answered;
+  document.getElementById('confirm-msg').textContent =
+    `You have answered ${answered} out of 50 questions. ${unanswered > 0 ? unanswered + ' question(s) are unanswered.' : ''} Are you sure you want to submit?`;
+  document.getElementById('confirm-modal').classList.add('active');
+}
+function closeConfirm() { document.getElementById('confirm-modal').classList.remove('active'); }
+
+function submitTest() {
+  closeConfirm();
+  clearInterval(timerInterval);
+  submitted = true;
+  showResult();
+}
+
+function showResult() {
+  let correct = 0, wrong = 0, skip = 0;
+  QUESTIONS.forEach((q, i) => {
+    if (userAnswers[i] === -1) skip++;
+    else if (userAnswers[i] === q.ans) correct++;
+    else wrong++;
+  });
+  document.getElementById('res-score').textContent = correct;
+  document.getElementById('res-correct').textContent = correct;
+  document.getElementById('res-wrong').textContent = wrong;
+  document.getElementById('res-skip').textContent = skip;
+
+  const reviewList = document.getElementById('review-list');
+  reviewList.innerHTML = '';
+  QUESTIONS.forEach((q, i) => {
+    const userA = userAnswers[i];
+    const isCorrect = userA === q.ans;
+    const isSkip = userA === -1;
+    const div = document.createElement('div');
+    div.className = 'review-item';
+    const qShort = q.q.split('\n')[0].substring(0, 80) + (q.q.split('\n')[0].length > 80 ? '...' : '');
+    let ansText, ansClass;
+    if (isSkip) { ansText = 'Skipped'; ansClass = 'skip'; }
+    else if (isCorrect) { ansText = `✓ (${OPTION_LABELS[userA]})`; ansClass = 'correct'; }
+    else { ansText = `✗ ${OPTION_LABELS[userA]} → ${OPTION_LABELS[q.ans]}`; ansClass = 'wrong'; }
+    div.innerHTML = `<span class="rv-num">Q${i+1}</span><span class="rv-q">${qShort}</span><span class="rv-ans ${ansClass}">${ansText}</span>`;
+    reviewList.appendChild(div);
+  });
+
+  document.getElementById('result-screen').style.display = 'block';
+}
+
+function restartTest() {
+  userAnswers = new Array(50).fill(-1);
+  marked = new Array(50).fill(false);
+  visited = new Array(50).fill(false);
+  current = 0;
+  submitted = false;
+  timeLeft = 60 * 60;
+  document.getElementById('timer').textContent = '60:00';
+  document.getElementById('timer').classList.remove('danger');
+  document.getElementById('result-screen').style.display = 'none';
+  buildGrid();
+  renderQuestion(0);
+  startTimer();
+}
+
+// INIT
+buildGrid();
+renderQuestion(0);
+startTimer();
+</script>
+</body>
+</html>
