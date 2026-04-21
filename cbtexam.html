@@ -1,0 +1,1034 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.5">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1">&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1">&lt;title&gt;CUET 2026 – Fundamentals of Partnership&lt;/title&gt;</p>
+<p class="p1">&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&amp;family=Noto+Sans:wght@400;500;600&amp;display=swap');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>:root {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--bg: #0d1117;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--surface: #161b22;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--card: #1c2230;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--border: #2d3748;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--accent: #f6c90e;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--accent2: #3b82f6;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--danger: #ef4444;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--success: #22c55e;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--text: #e2e8f0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--muted: #94a3b8;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--answered: #1e3a5f;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--answered-border: #3b82f6;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--marked: #3b2a0a;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--marked-border: #f6c90e;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--current: #1a3a1a;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--current-border: #22c55e;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--not-visited: #1c2230;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>* { margin: 0; padding: 0; box-sizing: border-box; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-family: 'Noto Sans', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background: var(--bg);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>color: var(--text);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>min-height: 100vh;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>overflow-x: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>/* ===== HEADER ===== */</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.header {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background: var(--surface);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-bottom: 2px solid var(--accent);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 10px 20px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>justify-content: space-between;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>position: sticky;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>top: 0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>z-index: 100;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.header-title {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-family: 'Rajdhani', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size: 1.1rem;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>color: var(--accent);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>letter-spacing: 1px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.header-sub { font-size: 0.75rem; color: var(--muted); }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>.timer-box {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background: var(--card);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border: 2px solid var(--accent);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 6px 18px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>min-width: 120px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.timer-label { font-size: 0.65rem; color: var(--muted); letter-spacing: 2px; text-transform: uppercase; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.timer-value {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-family: 'Rajdhani', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size: 1.6rem;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>color: var(--accent);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>letter-spacing: 2px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.timer-value.danger { color: var(--danger); animation: pulse 1s infinite; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.5} }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>/* ===== LAYOUT ===== */</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.main-layout {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>gap: 0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>height: calc(100vh - 60px);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>/* ===== QUESTION PANEL ===== */</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.question-panel {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>flex: 1;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 24px 30px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>overflow-y: auto;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>scroll-behavior: smooth;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>.question-header {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>gap: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin-bottom: 18px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.q-badge {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background: var(--accent);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>color: #000;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-family: 'Rajdhani', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size: 0.85rem;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 4px 12px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-radius: 4px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>letter-spacing: 1px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.q-section { font-size: 0.75rem; color: var(--muted); }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>.question-text {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>line-height: 1.7;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>color: var(--text);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin-bottom: 6px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background: var(--card);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-left: 4px solid var(--accent);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 14px 18px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-radius: 0 8px 8px 0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>.passage-box {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background: #111827;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border: 1px solid var(--border);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-left: 4px solid var(--accent2);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 14px 18px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-radius: 0 8px 8px 0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin-bottom: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size: 0.9rem;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>line-height: 1.7;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>color: #cbd5e1;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.passage-box strong { color: var(--accent2); }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>.options-list { list-style: none; margin-top: 16px; display: flex; flex-direction: column; gap: 10px; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>.option-item {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>align-items: flex-start;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>gap: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background: var(--card);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border: 1.5px solid var(--border);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 12px 16px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>transition: all 0.18s ease;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>user-select: none;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.option-item:hover { border-color: var(--accent2); background: #1a2332; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.option-item.selected { border-color: var(--accent2); background: var(--answered); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.option-item.correct { border-color: var(--success) !important; background: #0f2d1a !important; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.option-item.wrong { border-color: var(--danger) !important; background: #2d0f0f !important; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>.opt-key {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-family: 'Rajdhani', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size: 0.9rem;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>color: var(--accent);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>min-width: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding-top: 1px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.option-item.selected .opt-key { color: #fff; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.opt-text { font-size: 0.93rem; line-height: 1.5; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>/* ===== ACTION BUTTONS ===== */</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.action-bar {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>gap: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin-top: 24px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>flex-wrap: wrap;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.btn {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-family: 'Rajdhani', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size: 0.9rem;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>letter-spacing: 0.5px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 9px 22px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-radius: 6px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>transition: all 0.15s;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.btn-primary { background: var(--accent2); color: #fff; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.btn-primary:hover { background: #2563eb; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.btn-mark { background: var(--marked); border: 1.5px solid var(--marked-border); color: var(--accent); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.btn-mark:hover { background: #4a3810; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.btn-mark.active { background: var(--accent); color: #000; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.btn-clear { background: var(--card); border: 1.5px solid var(--border); color: var(--muted); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.btn-clear:hover { border-color: var(--danger); color: var(--danger); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.btn-submit { background: var(--success); color: #000; margin-left: auto; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.btn-submit:hover { background: #16a34a; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>.nav-btns { display: flex; gap: 8px; margin-left: auto; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.btn-nav { background: var(--card); border: 1.5px solid var(--border); color: var(--text); padding: 9px 16px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.btn-nav:hover { border-color: var(--accent); color: var(--accent); }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>/* ===== SIDEBAR ===== */</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.sidebar {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>width: 280px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background: var(--surface);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-left: 1px solid var(--border);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>overflow-y: auto;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>flex-shrink: 0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>.sidebar-title {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-family: 'Rajdhani', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size: 0.85rem;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>color: var(--muted);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>letter-spacing: 2px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>text-transform: uppercase;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin-bottom: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>.legend { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 16px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.legend-item { display: flex; align-items: center; gap: 6px; font-size: 0.72rem; color: var(--muted); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.leg-dot { width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>.q-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.q-btn {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>aspect-ratio: 1;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-radius: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border: 1.5px solid var(--border);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background: var(--not-visited);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>color: var(--muted);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-family: 'Rajdhani', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size: 0.8rem;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>transition: all 0.15s;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.q-btn:hover { border-color: var(--accent); color: var(--accent); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.q-btn.answered { background: var(--answered); border-color: var(--answered-border); color: #93c5fd; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.q-btn.marked { background: var(--marked); border-color: var(--marked-border); color: var(--accent); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.q-btn.answered.marked { background: #1a2a40; border-color: #a855f7; color: #c084fc; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.q-btn.current { background: var(--current); border-color: var(--current-border); color: #86efac; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>.stats-bar {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin-top: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background: var(--card);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>display: grid;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>grid-template-columns: 1fr 1fr;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>gap: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.stat-item { text-align: center; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.stat-val { font-family: 'Rajdhani', sans-serif; font-size: 1.3rem; font-weight: 700; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.stat-lbl { font-size: 0.68rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.s-answered .stat-val { color: var(--accent2); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.s-marked .stat-val { color: var(--accent); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.s-not .stat-val { color: var(--muted); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.s-total .stat-val { color: var(--text); }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>/* ===== RESULT OVERLAY ===== */</p>
+<p class="p1"><span class="Apple-converted-space">  </span>#result-screen {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>display: none;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>position: fixed;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>inset: 0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background: rgba(0,0,0,0.9);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>z-index: 1000;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>overflow-y: auto;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 30px 20px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.result-card {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>max-width: 700px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin: 0 auto;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background: var(--surface);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border: 2px solid var(--accent);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-radius: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 36px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.result-title {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-family: 'Rajdhani', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size: 2rem;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>color: var(--accent);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin-bottom: 4px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>letter-spacing: 2px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.result-sub { text-align: center; color: var(--muted); font-size: 0.85rem; margin-bottom: 28px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.score-circle {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>width: 140px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>height: 140px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-radius: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border: 6px solid var(--accent);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>flex-direction: column;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin: 0 auto 28px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.score-num { font-family: 'Rajdhani', sans-serif; font-size: 2.5rem; font-weight: 700; color: var(--accent); line-height: 1; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.score-denom { font-size: 0.85rem; color: var(--muted); }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>.result-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 28px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.rg-item { background: var(--card); border-radius: 8px; padding: 14px; text-align: center; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.rg-val { font-family: 'Rajdhani', sans-serif; font-size: 1.6rem; font-weight: 700; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.rg-lbl { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 2px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.rg-correct .rg-val { color: var(--success); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.rg-wrong .rg-val { color: var(--danger); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.rg-skip .rg-val { color: var(--muted); }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>.result-review { margin-top: 20px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.review-title {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-family: 'Rajdhani', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>color: var(--muted);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>text-transform: uppercase;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>letter-spacing: 2px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin-bottom: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-bottom: 1px solid var(--border);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding-bottom: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.review-item {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>align-items: flex-start;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>gap: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 10px 0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-bottom: 1px solid var(--border);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size: 0.85rem;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.rv-num { font-family: 'Rajdhani', sans-serif; font-weight: 700; color: var(--muted); min-width: 30px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.rv-q { flex: 1; color: var(--text); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.rv-ans { font-weight: 600; min-width: 60px; text-align: right; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.rv-ans.correct { color: var(--success); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.rv-ans.wrong { color: var(--danger); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.rv-ans.skip { color: var(--muted); }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>.btn-restart {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>display: block;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin: 24px auto 0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background: var(--accent);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>color: #000;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-family: 'Rajdhani', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 12px 36px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>letter-spacing: 1px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>/* ===== CONFIRM MODAL ===== */</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.modal-overlay {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>display: none;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>position: fixed;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>inset: 0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background: rgba(0,0,0,0.75);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>z-index: 500;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.modal-overlay.active { display: flex; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.modal-box {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background: var(--surface);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border: 2px solid var(--border);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-radius: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 28px 32px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>max-width: 400px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>width: 90%;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.modal-icon { font-size: 2.5rem; margin-bottom: 12px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.modal-title { font-family: 'Rajdhani', sans-serif; font-size: 1.3rem; font-weight: 700; margin-bottom: 8px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.modal-msg { font-size: 0.85rem; color: var(--muted); margin-bottom: 20px; line-height: 1.6; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.modal-btns { display: flex; gap: 10px; justify-content: center; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>::-webkit-scrollbar { width: 5px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>::-webkit-scrollbar-track { background: var(--bg); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>::-webkit-scrollbar-thumb { background: var(--border); border-radius: 10px; }</p>
+<p class="p1">&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- HEADER --&gt;</p>
+<p class="p1">&lt;div class="header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="header-title"&gt;⚡ CUET 2026 — Fundamentals of Partnership&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="header-sub"&gt;Section: Accountancy &amp;nbsp;|&amp;nbsp; Total Questions: 50 &amp;nbsp;|&amp;nbsp; Maximum Marks: 200&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="timer-box"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="timer-label"&gt;Time Left&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="timer-value" id="timer"&gt;60:00&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- MAIN --&gt;</p>
+<p class="p1">&lt;div class="main-layout"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- QUESTION PANEL --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="question-panel" id="question-panel"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="passage-area"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="question-header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;span class="q-badge" id="q-label"&gt;Q.1&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;span class="q-section"&gt;Fundamentals of Partnership&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="question-text" id="q-text"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;ul class="options-list" id="options-list"&gt;&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="action-bar"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="btn btn-mark" id="btn-mark" onclick="toggleMark()"&gt;🔖 Mark for Review&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="btn btn-clear" onclick="clearAnswer()"&gt;✕ Clear&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="nav-btns"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn btn-nav" onclick="navigate(-1)"&gt;← Prev&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn btn-primary" onclick="saveAndNext()"&gt;Save &amp; Next →&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="btn btn-submit" onclick="openConfirm()"&gt;Submit Test&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- SIDEBAR --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="sidebar"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="sidebar-title"&gt;Question Palette&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="legend"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="legend-item"&gt;&lt;div class="leg-dot" style="background:#1e3a5f;border:1.5px solid #3b82f6"&gt;&lt;/div&gt;Answered&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="legend-item"&gt;&lt;div class="leg-dot" style="background:#3b2a0a;border:1.5px solid #f6c90e"&gt;&lt;/div&gt;Marked&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="legend-item"&gt;&lt;div class="leg-dot" style="background:#1c2230;border:1.5px solid #2d3748"&gt;&lt;/div&gt;Not Visited&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="legend-item"&gt;&lt;div class="leg-dot" style="background:#1a3a1a;border:1.5px solid #22c55e"&gt;&lt;/div&gt;Current&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="q-grid" id="q-grid"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="stats-bar"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="stat-item s-answered"&gt;&lt;div class="stat-val" id="stat-ans"&gt;0&lt;/div&gt;&lt;div class="stat-lbl"&gt;Answered&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="stat-item s-not"&gt;&lt;div class="stat-val" id="stat-not"&gt;50&lt;/div&gt;&lt;div class="stat-lbl"&gt;Not Answered&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="stat-item s-marked"&gt;&lt;div class="stat-val" id="stat-mark"&gt;0&lt;/div&gt;&lt;div class="stat-lbl"&gt;Marked&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="stat-item s-total"&gt;&lt;div class="stat-val"&gt;50&lt;/div&gt;&lt;div class="stat-lbl"&gt;Total&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- CONFIRM MODAL --&gt;</p>
+<p class="p1">&lt;div class="modal-overlay" id="confirm-modal"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="modal-box"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="modal-icon"&gt;📋&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="modal-title"&gt;Submit Test?&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="modal-msg" id="confirm-msg"&gt;Are you sure you want to submit the test? This action cannot be undone.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="modal-btns"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="btn btn-clear" style="padding:9px 24px;" onclick="closeConfirm()"&gt;Cancel&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="btn btn-submit" style="margin:0;" onclick="submitTest()"&gt;Submit&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!-- RESULT SCREEN --&gt;</p>
+<p class="p1">&lt;div id="result-screen"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="result-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="result-title"&gt;TEST COMPLETED&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="result-sub"&gt;Fundamentals of Partnership — CUET 2026&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="score-circle"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="score-num" id="res-score"&gt;0&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="score-denom"&gt;out of 50&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="result-grid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="rg-item rg-correct"&gt;&lt;div class="rg-val" id="res-correct"&gt;0&lt;/div&gt;&lt;div class="rg-lbl"&gt;Correct&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="rg-item rg-wrong"&gt;&lt;div class="rg-val" id="res-wrong"&gt;0&lt;/div&gt;&lt;div class="rg-lbl"&gt;Wrong&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="rg-item rg-skip"&gt;&lt;div class="rg-val" id="res-skip"&gt;0&lt;/div&gt;&lt;div class="rg-lbl"&gt;Skipped&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="result-review"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="review-title"&gt;Answer Review&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div id="review-list"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button class="btn-restart" onclick="restartTest()"&gt;↺ Restart Test&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script&gt;</p>
+<p class="p1">const QUESTIONS = [</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>q: "In which of the following case, claim is valid if the partnership agreement is silent?",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>opts: [</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Sanjay is an active partner and wants a salary of 1,00,000 per year",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Monika had advanced a loan to the firm and claims interest @10% p.a.",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Sanjay and Monika contributed 2,00,000 and 5,00,000 as capital respectively and Monika wants equal share",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Monika wants interest on capital to be contributed @10% per annum"</p>
+<p class="p1"><span class="Apple-converted-space">    </span>],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ans: 2 // c</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>q: "Complete the sequence where interest on capital has to be provided as per partnership deed, but available profits are not sufficient to provide full amount of interest on capital.\nA. If it is appropriation calculate interest on capital for all partners at given rate\nB. Divide the available amount in the capital ratio among the partners\nC. Calculate ratio between capital of partners\nD. Consider the partnership deed and decide whether interest on capital is a charge or an appropriation\nE. Consider the available profit\nChoose the correct answer:",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>opts: ["A, B, C, D, E", "B, C, D, E, A", "D, A, E, C, B", "C, D, A, B, E"],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ans: 2 // c</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>q: "The steps in the process of Preparing Profit and Loss Appropriation account are:\na) Transfer the net profit to the credit side of P &amp; L Appropriation A/c\nb) Divide the profit among partners in the profit-sharing ratio\nc) Ascertain net profit after providing for all charges\nd) Debit the P &amp; L appropriation A/c with all appropriations like partners salary etc\ne) Credit the P &amp; L appropriation A/c with interest on drawing and deficiency on account of partners guarantee\nChoose the correct answer:",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>opts: ["A, B, C, D, E", "C, A, D, E, B", "B, C, E, A, D", "B, C, D, A, E"],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ans: 1 // b</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>q: "Partnership deed should be drafted and prepared as per:",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>opts: ["Provision of partnership act", "Companies act", "Registrar of firms", "Provision of the stamps act"],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ans: 3 // d</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>q: "Raman a partner withdrew ₹10,000 at the beginning of every month for the first 8 months then ₹15,000 at end of every month for the last 4 months. Calculate interest on drawings to be charged at 6% p.a. for the year ending March 31, 2023.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>opts: ["₹3,700", "₹537.50", "₹8,400", "₹3,850"],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ans: 3 // d</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>q: "In the absence of a partnership deed which of the following are correct?\nA. Profit sharing ratio will be on the basis of capital contributed by the partners\nB. No interest on capital will be provided\nC. No interest on drawing will be charged\nD. 6% p.a. interest on partners loan will be provided\nE. Partner will get salary for extra time devoted for the firm\nChoose the correct answer:",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>opts: ["A, B and C only", "A, D, and E only", "D, and E only", "B, C and D only"],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ans: 3 // d</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>q: "Arrange the following in sequence of the final accounts for a partnership firm.\nA. Profit and loss account\nB. Partners capital account\nC. Trading account\nD. Balance sheet\nE. Profit and loss appropriation account\nChoose the correct answer:",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>opts: ["C, A, E, B, D", "C, E, A, B, D", "E, C, A, B, D", "E, A, C, B, D"],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ans: 0 // a</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>q: "Match List I with List II — When the partners capital is fixed:\nA. Additional capital introduced → ?\nB. Withdrawal of capital → ?\nC. Drawings → ?\nD. Salary payable to partner → ?\n\nI. Credit side of current account\nII. Debit side of current account\nIII. Debit side of partner capital account\nIV. Credit side of partner capital account\nChoose the correct answer:",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>opts: ["A-IV, B-III, C-II, D-I", "A-I, B-II, C-III, D-IV", "A-II, B-I, C-III, D-IV", "A-II, B-III, C-IV, D-I"],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ans: 0 // a</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>q: "Mr. Kunal withdrew ₹10,000 per month at the end of each month from a firm for his personal use during the year ending 31-3-2022. What will be the interest on drawings if charged @ 8% p.a.?",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>opts: ["₹6,000", "₹5,200", "₹4,800", "₹4,400"],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ans: 3 // d</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>q: "Nawab, Shanaya and Hritik are partners sharing profits and losses in the ratio of 5:3:2. The partnership deed provide for charging interest on drawings @ 10% p.a. The drawings of Nawab, Shanaya and Hritik were ₹20,000; ₹15,000 and ₹10,000 respectively. After final accounts have been prepared it was discovered that interest on drawings has not been charged. The adjusting entry will be:",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>opts: [</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Shanaya Capital A/c Dr. 75; Hritik Capital A/c Dr. 50; To Nawab Capital A/c 125",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Shanaya Capital A/c Dr. 125; To Hritik Capital A/c 50; To Nawab Capital A/c 75",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Nawab Capital A/c Dr. 125; To Shanaya Capital A/c 75; To Hritik Capital A/c 50",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Shanaya Capital A/c Dr. 150; Hritik Capital A/c Dr. 100; To Nawab Capital A/c 250"</p>
+<p class="p1"><span class="Apple-converted-space">    </span>],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ans: 0 // a</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>q: "Calculate interest on drawings if an amount of ₹7,500 is withdrawn at the end of bimonthly (every 2 months) for the year. Rate of interest on drawing is 8% p.a.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>opts: ["₹1,500", "₹2,500", "₹3,000", "₹2,256"],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ans: 0 // a</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>q: "Ram and Rahul are partners sharing profits and losses in the ratio of 3:2. Their capital A/c showed the balance of ₹4,00,000 and ₹3,00,000 respectively on 1st April, 2021. Ram introduced additional capital on 1st August, 2021. Interest on capital is allowed @6% p.a. Total interest on capital of both the partners is ₹50,000. Calculate additional capital introduced by Ram on 1st August, 2021 and interest on capital earned on additional capital.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>opts: ["₹1,00,000 and ₹4,000", "₹3,00,000 and ₹18,000", "₹2,00,000 and ₹8,000", "₹1,50,000 and ₹10,000"],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ans: 2 // c</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>q: "Mickey, Tom and Jerry were partners in the ratio of 5:3:2. On 31st March, 2021, their books reflected a net profit of ₹2,10,000. As per the term of the partnership deed they were entitled for interest on capital which amounted to ₹80,000; ₹60,000 and ₹40,000 respectively. Besides this a salary of ₹60,000 each was payable to Mickey and Tom. Calculate the amount of total interest on capital given to all partners.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>opts: ["₹1,26,000", "₹1,80,000", "₹84,000", "₹56,000"],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ans: 0 // a</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>q: "Identify the correct sequence to be followed while preparing of final account of a partnership firm:\n(A) Profit and Loss Appropriation Account\n(B) Profit and Loss Account\n(C) Trading Account\n(D) Balance Sheet\nChoose the correct answer:",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>opts: ["(C), (B), (A), (D)", "(A), (C), (B), (D)", "(B), (A), (D), (C)", "(C), (B), (D), (A)"],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ans: 0 // a</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>q: "Match List I with List II:\n(A) Salary to partner → ?\n(B) Interest on Partner's loan → ?\n(C) Interest on Partner's Drawings → ?\n(D) Additional capital introduced → ?\n\n(I) Credit side of Partner's Capital Account\n(II) Debit side of Partner's Current Account\n(III) Debit side of Profit and Loss Account\n(IV) Credit side of Partner's Current Account\nChoose the correct answer:",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>opts: [</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"(A)-(I), (B)-(II), (C)-(III), (D)-(IV)",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"(A)-(I), (B)-(III), (C)-(II), (D)-(IV)",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"(A)-(IV), (B)-(III), (C)-(II), (D)-(I)",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"(A)-(III), (B)-(IV), (C)-(I), (D)-(II)"</p>
+<p class="p1"><span class="Apple-converted-space">    </span>],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ans: 2 // c</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>q: "A partnership can have maximum 50 partners. This limit has been set by the:",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>opts: ["Indian Partnership Act, 1932", "State Government", "Indian Contract Act, 1872", "Central Government"],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ans: 3 // d</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>q: "Match List I with List II — Equal amount of drawings made:\n(A) At the end of each half year → ?\n(B) At the beginning of each quarter → ?\n(C) At the beginning of each month → ?\n(D) At the end of each quarter → ?\n\n(I) 4.5 months<span class="Apple-converted-space">  </span>(II) 6.5 months<span class="Apple-converted-space">  </span>(III) 7.5 months<span class="Apple-converted-space">  </span>(IV) 3 months\nChoose the correct answer:",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>opts: [</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"(A)-(I), (B)-(II), (C)-(III), (D)-(IV)",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"(A)-(I), (B)-(III), (C)-(II), (D)-(IV)",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"(A)-(IV), (B)-(II), (C)-(I), (D)-(III)",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"(A)-(IV), (B)-(III), (C)-(II), (D)-(I)"</p>
+<p class="p1"><span class="Apple-converted-space">    </span>],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ans: 3 // d</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>q: "Kavita and Lalita are partners, sharing profits in the ratio of 2:1. They decide to admit Mohan for 1/4th share in future with a guaranteed amount of ₹25,000. Both Kavita and Lalita undertake to meet the liability arising due to the guaranteed amount to Mohan in their respective profit-sharing ratio. The firm earned profits of ₹76,000 for the year 2022-23. The deficiency borne by Kavita is:",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>opts: ["₹4,000", "₹2,000", "₹6,000", "₹4,500"],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ans: 0 // a</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>q: "Rent payable to partner is:",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>opts: [</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Debited to trading account",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Credited to profit and loss account",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Debited to profit and loss account",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Debited to profit and loss appropriation account"</p>
+<p class="p1"><span class="Apple-converted-space">    </span>],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ans: 2 // c</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>q: "When the date of drawing is not specified, interest on drawings are calculated for:",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>opts: ["One full year", "6.5 month", "5.5 month", "6 month"],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ans: 3 // d</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>q: "Identify the correct statement from the given below:",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>opts: [</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Partner's Current Account will never be shown in Assets side of the Balance Sheet",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Partner's Current Account will either be shown in Assets side of the Balance Sheet or be shown in liabilities side of the Balance Sheet",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Partner's Current Account will always be shown in liabilities side of the Balance Sheet",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Partner's Current Account will always in Assets side of the Balance Sheet"</p>
+<p class="p1"><span class="Apple-converted-space">    </span>],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ans: 1 // b</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>q: "In case of Fixed Capital Account, interest on Drawings are:",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>opts: [</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Debited to capital account",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Credited to capital account",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Debited to current account",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Credited to current account"</p>
+<p class="p1"><span class="Apple-converted-space">    </span>],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ans: 2 // c</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>q: "In the absence of partnership deed, interest on drawings is charged at:",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>opts: ["6% p.a.", "Nil", "At the prevailing market rate", "6% p.a."],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ans: 1 // b</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>q: "In the case of guarantee of profit the sequence of steps to be followed are:\nA. divide the profit in the given ratio\nB. prepare profit and loss appropriation account as usual\nC. deduct the deficiency from guaranteeing partner and add the same to guaranteed partner\nD. find the deficiency\nChoose the correct answer:",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>opts: ["A, B, C, D", "A, B, D, C", "B, A, D, C", "C, B, D, A"],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ans: 2 // c</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>q: "The liability of partners is:",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>opts: [</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Limited to the value of shares held",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Limited to amount of investment",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Limited to the amount of guarantee",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Unlimited"</p>
+<p class="p1"><span class="Apple-converted-space">    </span>],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ans: 3 // d</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>q: "When the capital accounts are fixed, additional capital introduced by the partner is:",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>opts: [</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Credited to current account",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Debited to current account",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Credited to capital account",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Debited to capital account"</p>
+<p class="p1"><span class="Apple-converted-space">    </span>],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ans: 2 // c</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>q: "Which of the following is the feature of fixed capital method in partnership accounts?",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>opts: [</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Each partner has one account",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"The capital accounts always show a credit balance",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"The balance of the capital account fluctuates from year to year",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"In the absence of any instruction the capital account should be prepared by this method"</p>
+<p class="p1"><span class="Apple-converted-space">    </span>],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ans: 1 // b</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>q: "Neha contributed ₹30,000 and Saloni ₹90,000 as capital. What will be Saloni's share in profit if the partnership agreement is silent?",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>opts: [</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"One third of total profit",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"One fourth of total profit",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Half of total profit",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Two third of total profit"</p>
+<p class="p1"><span class="Apple-converted-space">    </span>],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ans: 2 // c</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>q: "Which of the following account/statement is prepared to distribute the profit or loss among partners?",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>opts: [</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Profit and Loss Appropriation A/c",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Profit and Loss Adjustment A/c",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Profit and Loss A/c",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Balance Sheet"</p>
+<p class="p1"><span class="Apple-converted-space">    </span>],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ans: 0 // a</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>q: "Which of the following is not the feature of partnership?",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>opts: [</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"There should be at least two persons coming together for a common goal.",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Partnership is the result of an agreement between two or more persons to do business and share its profits only",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"The business of a partnership concern may be carried on by all the partners or any of them acting for all",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"The business profits and losses are shared by all the partners as per profit sharing ratio"</p>
+<p class="p1"><span class="Apple-converted-space">    </span>],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ans: 1 // b</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>q: "Vijay and Manohar share profits and losses in the ratio of 2:1. They admit Prakash as a partner with ¼ share in profits with a guarantee that his share of profit will be at least ₹50,000. The net profit of the firm for the year ending March 31, 2015 was ₹1,60,000. Calculate the amount of profit Vijay will get:",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>opts: ["₹60,333", "₹73,333", "₹50,300", "₹80,333"],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ans: 1 // b</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>q: "Match List I with List II:\n(A) Bank (fresh capital introduced) → ?\n(B) Interest on drawings → ?\n(C) Bank (permanent withdrawal of capital) → ?\n(D) Commission → ?\n\n(I) Debit side of Partner's current account\n(II) Debit side of Partner's capital account\n(III) Credit side of Partner's current account\n(IV) Credit side of partner's capital account\nChoose the correct answer:",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>opts: [</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"(A)–(IV), (B)–(I), (C)–(II), (D)–(III)",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"(A)–(I), (B)–(II), (C)–(III), (D)–(IV)",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"(A)–(I), (B)–(II), (C)–(IV), (D)–(III)",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"(A)–(III), (B)–(IV), (C)–(I), (D)–(II)"</p>
+<p class="p1"><span class="Apple-converted-space">    </span>],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ans: 0 // a</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>q: "The clauses of a partnership deed can be altered with the consent of:",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>opts: ["Government Authority", "Registrar of Firms", "All the Partners", "State Government"],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ans: 2 // c</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>q: "The Profit and Loss Appropriation Account is merely an extension of the Profit and Loss Account of the firm. Which among the following is NOT shown in the Profit and Loss Appropriation Account?",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>opts: [</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"All adjustments in respect of partners salary",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"All adjustments in respect of payment to vendor",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"All adjustments in respect of interest on capital",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"All adjustments in respect of interest on drawings"</p>
+<p class="p1"><span class="Apple-converted-space">    </span>],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ans: 1 // b</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>q: "Calculate interest on drawing if Ram withdrew ₹3,000 per month at the beginning of each month for the whole year if interest on drawing is charged @9% per annum:",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>opts: ["₹1,455", "₹1,745", "₹1,485", "₹1,755"],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ans: 3 // d</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>q: "Which among the following is NOT true?",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>opts: [</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Valid partnership can be formulated even without a written agreement between the partners",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Each partner carrying on the business is the principal as well as the agent for all the other partners",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"The agreement may carry or not on any business. Mere co-ownership of a property can amount to partnership",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Persons who have entered into partnership with one another are individually called partner and collectively called firm"</p>
+<p class="p1"><span class="Apple-converted-space">    </span>],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ans: 2 // c</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>q: "Yadu, Madhu and Vidu are partners sharing profit and losses in the ratio of 2:2:1. Their fixed capital on April 01, 2018 were: Yadu ₹5,00,000; Madhu ₹4,00,000; Vidu ₹3,50,000. As per a partnership deed, partners are entitled to interest on capital @5% p.a. and Yadu has to be paid a salary of ₹2,000 per month. The net loss of the firm for year ending March 31, 2019 amounted to ₹75,000. Partners' distribution of loss would be:",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>opts: [</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Yadu ₹30,000; Madhu ₹30,000; Vidu ₹15,000",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Yadu ₹25,000; Madhu ₹25,000; Vidu ₹25,000",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Yadu ₹39,600; Madhu ₹39,600; Vidu ₹19,800",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Yadu ₹35,000; Madhu ₹25,000; Vidu ₹15,000"</p>
+<p class="p1"><span class="Apple-converted-space">    </span>],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ans: 0 // a</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>q: "Amitabh and Babul are partners sharing profits in the ratio of 3:2, with capital of ₹50,000 and ₹30,000 respectively. Amitabh has also given a Loan on April 01, 2024 of ₹50,000 to the firm without any agreement. Calculate Interest on Amitabh's Loan assuming books are closing on 31st March, 2025.",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>opts: ["Nil", "₹6,000", "₹1,500", "₹3,000"],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ans: 3 // d</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>q: "Which combination of statements is true about the fixed and fluctuating capital?\nA. Under the Fixed capital method two separate accounts are maintained for each partner\nB. Under the Fluctuating capital method the balance of the capital account fluctuates from year to year\nC. Under the Fixed capital method, drawings, salary, interest on capital, etc. are posted in the current accounts\nD. Under the Fixed capital method, the capital accounts always show a debit balance\nChoose the correct answer:",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>opts: ["A, B and D only", "A, B and C only", "A, C and D only", "B, C and D only"],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ans: 1 // b</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>q: "Ram and Laxman started business on 1st Jan 2020 with a capital of ₹1,20,000 and ₹80,000 respectively. Ram introduced ₹50,000 to the firm on 1st July 2020 as additional capital. If the rate of interest is 15% p.a. and accounts are closed as per calendar year, the interest payable to Ram on Capital would be:",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>opts: ["₹12,700", "₹18,000", "₹25,500", "₹21,750"],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ans: 3 // d</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>q: "Which of the following statement is incorrect?",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>opts: [</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Valid partnership can be formulated even without a written agreement between the partners",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Each partner will share profit in same proportion as other in case partnership deed is not there",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Maximum number of partners as prescribed by central government can be 50",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"The method of settlement of dispute among the partner cannot be part of the partnership deed."</p>
+<p class="p1"><span class="Apple-converted-space">    </span>],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ans: 3 // d</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>q: "Match List I with List II — Interest on Drawings:\n(A) When amount is withdrawn at the beginning of each month → ?\n(B) When the amount is withdrawn at the end of each month → ?\n(C) When the amount is withdrawn at the middle of each month → ?\n(D) When the amount is withdrawn at the end of each quarter → ?\n\n(I) 6 months<span class="Apple-converted-space">  </span>(II) 6.5 months<span class="Apple-converted-space">  </span>(III) 5.5 months<span class="Apple-converted-space">  </span>(IV) 4.5 months\nChoose the correct answer:",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>opts: [</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"(A)–(III), (B)–(II), (C)–(IV), (D)–(I)",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"(A)–(II), (B)–(III), (C)–(IV), (D)–(I)",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"(A)–(II), (B)–(III), (C)–(I), (D)–(IV)",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"(A)–(III), (B)–(IV), (C)–(I), (D)–(II)"</p>
+<p class="p1"><span class="Apple-converted-space">    </span>],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ans: 2 // c</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>q: "Choose the correct statement if a partnership deed is not present:",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>opts: [</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Interest on capital are allowed",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Interest on partner drawing is charged",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Remuneration or salary is given to partners",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Partners shall share the profit and losses equally"</p>
+<p class="p1"><span class="Apple-converted-space">    </span>],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ans: 3 // d</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>q: "Sameer and Yasmin are partners with capitals of ₹15,00,000 and ₹10,00,000 respectively. They agreed to share profits in the ratio of 3:2. They admit Ravi on October 1, 2019 who brings ₹12,00,000 as capital and Sameer also introduced additional capital ₹3,00,000 on that date. Interest on partner's capital is provided @5% p.a. The amount of interest on the capital of Sameer for the year 2019-20 is:",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>opts: ["₹82,500", "₹90,000", "₹82,000", "₹75,000"],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ans: 0 // a</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>q: "Which section of the Partnership Act 1932, defines partnership?",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>opts: ["Section 4", "Section 5", "Section 6", "Section 7"],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ans: 0 // a</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>q: "For distribution of profits made during a year among the partners the following account is debited:",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>opts: [</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Profit and Loss Appropriation A/c",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Partner's Capital A/c",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Goodwill A/c",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Profit and Loss A/c"</p>
+<p class="p1"><span class="Apple-converted-space">    </span>],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ans: 0 // a</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>q: "A and B are partners in a firm with their fixed capital ₹4,00,000 and ₹5,00,000 respectively. After preparation of accounts it was found that interest on capital @10% p.a. as provided by the partnership deed is omitted. In order to rectify the mistake. A's current account will be ___?",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>opts: ["Credited by ₹5,000", "Debited by ₹5,000", "Credited by ₹10,000", "Debited by ₹10,000"],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ans: 1 // b</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>q: "Ravi one the partners provided ₹1,00,000 loan to the firm. In the absence of partnership deed interest on partners loan is allowed @ _____?",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>opts: ["6%", "6% p.a.", "5%", "5% p.a."],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ans: 1 // b</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>q: "The business of a partnership concern may be carried on by all the partners or any one of them acting for all. Indicate which feature of the partnership?",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>opts: ["Agreement", "Mutual agency", "Business", "Liability of partners"],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ans: 1 // b</p>
+<p class="p1"><span class="Apple-converted-space">  </span>},</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>q: "In the case of fixed capital method, following two accounts are maintained:",</p>
+<p class="p1"><span class="Apple-converted-space">    </span>opts: [</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Capital account and Balance Sheet",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Current account and Balance Sheet",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Capital account and Current account",</p>
+<p class="p1"><span class="Apple-converted-space">      </span>"Revaluation and Capital account"</p>
+<p class="p1"><span class="Apple-converted-space">    </span>],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>ans: 2 // c</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1">];</p>
+<p class="p2"><br></p>
+<p class="p1">const OPTION_LABELS = ['a', 'b', 'c', 'd'];</p>
+<p class="p1">let current = 0;</p>
+<p class="p1">let userAnswers = new Array(50).fill(-1);</p>
+<p class="p1">let marked = new Array(50).fill(false);</p>
+<p class="p1">let visited = new Array(50).fill(false);</p>
+<p class="p1">let timerInterval;</p>
+<p class="p1">let timeLeft = 60 * 60;</p>
+<p class="p1">let submitted = false;</p>
+<p class="p2"><br></p>
+<p class="p1">// Build Q Grid</p>
+<p class="p1">function buildGrid() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const grid = document.getElementById('q-grid');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>grid.innerHTML = '';</p>
+<p class="p1"><span class="Apple-converted-space">  </span>for (let i = 0; i &lt; 50; i++) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const btn = document.createElement('button');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>btn.className = 'q-btn';</p>
+<p class="p1"><span class="Apple-converted-space">    </span>btn.textContent = i + 1;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>btn.id = `qb-${i}`;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>btn.onclick = () =&gt; goTo(i);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>grid.appendChild(btn);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function updateGridBtn(i) {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const btn = document.getElementById(`qb-${i}`);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>btn.className = 'q-btn';</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (i === current) btn.classList.add('current');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>else if (marked[i] &amp;&amp; userAnswers[i] !== -1) btn.classList.add('answered', 'marked');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>else if (marked[i]) btn.classList.add('marked');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>else if (userAnswers[i] !== -1) btn.classList.add('answered');</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function updateAllGridBtns() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>for (let i = 0; i &lt; 50; i++) updateGridBtn(i);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function updateStats() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const answered = userAnswers.filter(a =&gt; a !== -1).length;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const markedCount = marked.filter(m =&gt; m).length;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('stat-ans').textContent = answered;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('stat-not').textContent = 50 - answered;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('stat-mark').textContent = markedCount;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function renderQuestion(i) {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>visited[i] = true;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const q = QUESTIONS[i];</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('q-label').textContent = `Q.${i + 1}`;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('q-text').innerHTML = q.q.replace(/\n/g, '&lt;br&gt;');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>const optsList = document.getElementById('options-list');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>optsList.innerHTML = '';</p>
+<p class="p1"><span class="Apple-converted-space">  </span>q.opts.forEach((opt, idx) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const li = document.createElement('li');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>li.className = 'option-item' + (userAnswers[i] === idx ? ' selected' : '');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>li.innerHTML = `&lt;span class="opt-key"&gt;${OPTION_LABELS[idx]})&lt;/span&gt;&lt;span class="opt-text"&gt;${opt}&lt;/span&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>li.onclick = () =&gt; selectOption(idx);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>optsList.appendChild(li);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>// Mark button</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const markBtn = document.getElementById('btn-mark');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>markBtn.classList.toggle('active', marked[i]);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>markBtn.textContent = marked[i] ? '🔖 Marked' : '🔖 Mark for Review';</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>updateAllGridBtns();</p>
+<p class="p1"><span class="Apple-converted-space">  </span>updateStats();</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('question-panel').scrollTop = 0;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function selectOption(idx) {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (submitted) return;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>userAnswers[current] = idx;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>renderQuestion(current);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function saveAndNext() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (current &lt; 49) { current++; renderQuestion(current); }</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function navigate(dir) {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const next = current + dir;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (next &gt;= 0 &amp;&amp; next &lt; 50) { current = next; renderQuestion(current); }</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function goTo(i) {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>current = i;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>renderQuestion(i);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function toggleMark() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>marked[current] = !marked[current];</p>
+<p class="p1"><span class="Apple-converted-space">  </span>renderQuestion(current);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function clearAnswer() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>userAnswers[current] = -1;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>renderQuestion(current);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">// TIMER</p>
+<p class="p1">function startTimer() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>timerInterval = setInterval(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>timeLeft--;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const m = Math.floor(timeLeft / 60);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const s = timeLeft % 60;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const el = document.getElementById('timer');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>el.textContent = `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (timeLeft &lt;= 300) el.classList.add('danger');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (timeLeft &lt;= 0) { clearInterval(timerInterval); submitTest(); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}, 1000);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function openConfirm() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const answered = userAnswers.filter(a =&gt; a !== -1).length;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const unanswered = 50 - answered;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('confirm-msg').textContent =</p>
+<p class="p1"><span class="Apple-converted-space">    </span>`You have answered ${answered} out of 50 questions. ${unanswered &gt; 0 ? unanswered + ' question(s) are unanswered.' : ''} Are you sure you want to submit?`;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('confirm-modal').classList.add('active');</p>
+<p class="p1">}</p>
+<p class="p1">function closeConfirm() { document.getElementById('confirm-modal').classList.remove('active'); }</p>
+<p class="p2"><br></p>
+<p class="p1">function submitTest() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>closeConfirm();</p>
+<p class="p1"><span class="Apple-converted-space">  </span>clearInterval(timerInterval);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>submitted = true;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>showResult();</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function showResult() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>let correct = 0, wrong = 0, skip = 0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>QUESTIONS.forEach((q, i) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (userAnswers[i] === -1) skip++;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>else if (userAnswers[i] === q.ans) correct++;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>else wrong++;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>});</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('res-score').textContent = correct;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('res-correct').textContent = correct;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('res-wrong').textContent = wrong;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('res-skip').textContent = skip;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>const reviewList = document.getElementById('review-list');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>reviewList.innerHTML = '';</p>
+<p class="p1"><span class="Apple-converted-space">  </span>QUESTIONS.forEach((q, i) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const userA = userAnswers[i];</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const isCorrect = userA === q.ans;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const isSkip = userA === -1;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const div = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>div.className = 'review-item';</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const qShort = q.q.split('\n')[0].substring(0, 80) + (q.q.split('\n')[0].length &gt; 80 ? '...' : '');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>let ansText, ansClass;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (isSkip) { ansText = 'Skipped'; ansClass = 'skip'; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>else if (isCorrect) { ansText = `✓ (${OPTION_LABELS[userA]})`; ansClass = 'correct'; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>else { ansText = `✗ ${OPTION_LABELS[userA]} → ${OPTION_LABELS[q.ans]}`; ansClass = 'wrong'; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>div.innerHTML = `&lt;span class="rv-num"&gt;Q${i+1}&lt;/span&gt;&lt;span class="rv-q"&gt;${qShort}&lt;/span&gt;&lt;span class="rv-ans ${ansClass}"&gt;${ansText}&lt;/span&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>reviewList.appendChild(div);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('result-screen').style.display = 'block';</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function restartTest() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>userAnswers = new Array(50).fill(-1);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>marked = new Array(50).fill(false);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>visited = new Array(50).fill(false);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>current = 0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>submitted = false;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>timeLeft = 60 * 60;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('timer').textContent = '60:00';</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('timer').classList.remove('danger');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('result-screen').style.display = 'none';</p>
+<p class="p1"><span class="Apple-converted-space">  </span>buildGrid();</p>
+<p class="p1"><span class="Apple-converted-space">  </span>renderQuestion(0);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>startTimer();</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">// INIT</p>
+<p class="p1">buildGrid();</p>
+<p class="p1">renderQuestion(0);</p>
+<p class="p1">startTimer();</p>
+<p class="p1">&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
