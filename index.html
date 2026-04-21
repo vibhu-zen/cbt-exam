@@ -1030,5 +1030,22 @@
 <p class="p1">&lt;/script&gt;</p>
 <p class="p1">&lt;/body&gt;</p>
 <p class="p1">&lt;/html&gt;</p>
+    </div> 
+  </div> 
+
+  <script>
+    // This is a simple timer to get you started
+    let time = 3600; 
+    const timerElement = document.querySelector('.timer-value');
+    
+    setInterval(() => {
+      let minutes = Math.floor(time / 60);
+      let seconds = time % 60;
+      timerElement.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+      if (time > 0) time--;
+    }, 1000);
+  </script>
+
 </body>
 </html>
+
